@@ -8,10 +8,11 @@ const axios = Axios.create({
 axios.interceptors.request.use(
   (config) => {
     // console.log()
+    console.log(config); // config 가 어찌 되어있는 보고 싶다
     return config;
   },
   (err) => {
-    console.log(err);
+    console.log(`Request Err : ${err}`);
   }
 );
 
@@ -20,5 +21,12 @@ axios.interceptors.response.use(
   (res) => {
     return res;
   },
-  (err) => console.log(err)
+  (err) => {
+    console.log(`Response Err : ${err}`);
+  }
 );
+
+axios.get("https://reqres.in/api/users?page=2").then((res) => {
+  console.log(res.data);
+  return res;
+});
