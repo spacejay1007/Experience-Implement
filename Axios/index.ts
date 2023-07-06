@@ -4,7 +4,7 @@ const axios = Axios.create({
   headers: { "Content-Type": "application/json" },
 });
 
-// Request > interceptor 에 추가
+// Request > interceptor
 axios.interceptors.request.use(
   (config) => {
     // console.log()
@@ -16,11 +16,12 @@ axios.interceptors.request.use(
   }
 );
 
-// response > interceptor 에 추가
+// response interceptor
 axios.interceptors.response.use(
   (res) => {
     return res;
   },
+
   (err) => {
     console.log(`Response Err : ${err}`);
   }
