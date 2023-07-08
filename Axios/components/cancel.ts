@@ -10,7 +10,7 @@ const config = {
   cancelToken: axiosCancel.token,
 };
 
-// HTTP 요청 보내기 , axios.get 과 동일
+// HTTP 요청 보내기
 axios(config)
   .then((res) => {
     console.log(res.data);
