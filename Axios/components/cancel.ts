@@ -7,7 +7,7 @@ const axiosCancel = axios.CancelToken.source();
 const config = {
   url: "https://reqres.in/api/users?page=2",
   method: "get",
-  cancelToken: axiosCancel.token,
+  cancelToken: axiosCancel.token, // 생성된 토근의 토큰을 전달
 };
 
 // HTTP 요청 보내기
