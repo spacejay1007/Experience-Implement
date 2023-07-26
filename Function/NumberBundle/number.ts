@@ -116,11 +116,6 @@ function PastHideLine(args) {
 
 // HideLine
 function HideLine() {
-  // 함수 설명 : summaryLine이 요약 내용 즉 사라지지 말아야할 번호들이 정리되어있고 그 외의 라인들을 hideLineResult 의 배열에 start ~ end 로 들어가야한다 -> ex) 요약 내용 [[21,23]] , 총라인은 30  > 결과물 [[0,20] , [24,30]]
-  // 기존 HideLine_() , HideLine_2() 함수는 0,1,2 ... 확인 null 변경 , 다시 0,1,2... null 이런형식으로 바뀌는 것에 대해 너무 비효율적이며 처리속도를 늦추는 현상이라고 판단
-
-  // summaryLine 자체가 오름차순으로 순서대로 번호가 정리되어 있기 때문에 i는 계속 0,1,2...12 넣어줘야 할 데이터가 있다? 멈춰있다가 다시 13부터 ... 진행 되어 지게
-
   // 전체 라인 확인
   // const lastLine = codeMirror && codeMirror.lastLine();
 
