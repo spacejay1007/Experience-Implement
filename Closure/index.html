@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Document</title>
+  </head>
+  <body>
+    <p>전역 변수를 활용한 Counting</p>
+    <button id="inclease">+</button>
+    <p id="count">0</p>
+
+    <p>지역 변수를 활용한 Counting</p>
+    <button id="incleases">+</button>
+    <p id="counts">0</p>
+
+    <p>클로저를 사용한 Counting</p>
+    <button id="closureinclease">+</button>
+    <p id="closurecount">0</p>
+    <!-- <script src=""></script> -->
+    <script>
+      let incleaseBtn = document.getElementById("inclease");
+      let count = document.getElementById("count");
+      let incleaseBtns = document.getElementById("incleases");
+      let counts = document.getElementById("counts");
+      let closureIncleaseBtns = document.getElementById("closureinclease");
+      let closureCounts = document.getElementById("closurecount");
+
+      // 전역 변수 라면?
+      let conunter = 0;
+
+      function inclease() {
+        return (conunter = conunter + 1);
+      }
+
+      incleaseBtn.onclick = function () {
+        // 숫자를 넣어주자
+        count.innerHTML = inclease();
+      };
+
+      // 지역 변수 일 때 만들어 보자
+      function incleases() {
+        let conunters = 0;
+        return (conunters = conunters + 1);
+      }
+      incleaseBtns.onclick = function () {
+        counts.innerHTML = increases();
+      };
+
+      // 클로저를 활용하여 만들어보자
+      const clous = (function () {
+        let closureCnt = 0;
+
+        return function () {
+          return (closureCnt += 1);
+        };
+      })();
+
+      closureIncleaseBtns.onclick = function () {
+        closureCounts.innerHTML = clous();
+      };
+    </script>
+  </body>
+</html>
