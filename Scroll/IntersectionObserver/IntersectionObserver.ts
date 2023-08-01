@@ -13,14 +13,14 @@ const options = {
 
 let observer = new IntersectionObserver(function (entries, observers) {
   entries.forEach((entry) => {
-    const list = document.querySelector(".list");
+    const list: Element = document.querySelector(".list")!;
     // 타겟 요소와 루트 요소가 교차하면
     if (entry.isIntersecting) {
       for (let i = index; i < index + count; i++) {
         // item을 count 숫자 만큼 생성하고 list에 추가해주기
         let item = document.createElement("p");
 
-        item.textContent = i;
+        item.textContent = String(i);
         item.className += "item";
         list.appendChild(item); // div tag className="list" 에 자식 element로 넣기
       }
@@ -29,7 +29,6 @@ let observer = new IntersectionObserver(function (entries, observers) {
       index += count;
     }
   });
-  console.log(observers);
 }, options);
 // list의 끝부분을 알려주는 p 타겟 요소를 관찰
 observer.observe(document.querySelector(".list-end") as Element);
