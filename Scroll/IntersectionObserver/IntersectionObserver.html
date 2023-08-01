@@ -6,71 +6,57 @@
     <title>Document</title>
   </head>
   <body>
-    <script>
-      // IntersectionObserver 를 등록한다.
-      const io = new IntersectionObserver((entries) => {
-        entries.forEach((entry) => {
-          console.log(entry);
-
-          // 관찰 대상이 viewport 안에 들어온 경우 'tada' 클래스를 추가
-          if (entry.intersectionRatio > 0) {
-            entry.target.classList.add("tada");
-          }
-          // 그 외의 경우 'tada' 클래스 제거
-          else {
-            entry.target.classList.remove("tada");
-          }
-        });
-      });
-
-      // 관찰할 대상을 선언하고, 해당 속성을 관찰시킨다.
-      const boxElList = document.querySelectorAll(".box");
-      console.log(boxElList);
-      boxElList.forEach((el) => {
-        console.log(el, io);
-        io.observe(el);
-      });
-    </script>
-
-    <div class="example">
-      <h1 class="title">Scroll Down <span class="arrow">👇</span></h1>
-      <div class="box"></div>
-      <div class="box"></div>
-      <div class="box"></div>
-    </div>
+    <div class="list"></div>
+    <p class="list-end"></p>
   </body>
 
+  <script>
+    const count = 100; // 한 번 새로운 item들이 추가될 때 추가되는 item의 갯수
+    let index = 0; // item의 index
+
+    // 옵션 객체
+    const options = {
+      // null을 설정하거나 무엇도 설정하지 않으면 브라우저 viewport가 기준이 된다.
+      root: null,
+      rootMargin: "200px 0", //바깥 여백(Margin)을 이용해 Root 범위를 확장하거나 축소할 수 있습니다. CSS의 margin과 같이 4단계로 여백을 설정할 수 있으며, px 또는 %로 나타낼 수 있습니다. 기본값은 0px 0px 0px 0px이며 단위를 꼭 입력해야 합니다.
+
+      // 타겟 요소의 10%가 루트 요소와 겹치면 콜백을 실행한다.
+      threshold: 0.1, // 0.0 ~ 1.0 까지
+    };
+
+    let observer = new IntersectionObserver(function (entries, observers) {
+      entries.forEach((entry) => {
+        const list = document.querySelector(".list");
+        // console.log(entry);
+        // 타겟 요소와 루트 요소가 교차하면
+        if (entry.isIntersecting) {
+          for (let i = index; i < index + count; i++) {
+            // item을 count 숫자 만큼 생성하고 list에 추가해주기
+            let item = document.createElement("p");
+
+            item.textContent = i;
+            item.className += "item";
+            list.appendChild(item); // div tag className="list" 에 자식 element로 넣기
+          }
+
+          // index에 +count해서 갱신해주기 > isIntersecting : true 시 100 을 추가
+          index += count;
+        }
+      });
+      console.log(observers);
+    }, options);
+    // list의 끝부분을 알려주는 p 타겟 요소를 관찰
+    observer.observe(document.querySelector(".list-end"));
+  </script>
   <style>
-    .example {
-      padding-top: 800px;
-      padding-bottom: 300px;
-      width: 100%;
-      background: #eee;
-      position: relative;
+    .item {
+      text-align: center;
+      padding: 20px 0px;
+      margin: 0px;
     }
 
-    .title {
-      position: absolute;
-      top: 10px;
-      left: 50%;
-      transform: translateX(-50%);
-    }
-
-    .arrow {
-      display: inline-block;
-      animation: bounce 1s infinite ease;
-    }
-
-    .box {
-      margin: 0 auto 200px auto;
-      width: 100px;
-      height: 100px;
-      border-radius: 5px;
-      background: #7de2fc linear-gradient(-225deg, #7de2fc 0%, #b9b6e5 100%);
-    }
-
-    .box.tada {
-      animation: tada 1s ease;
+    .item:nth-child(even) {
+      background-color: gray;
     }
   </style>
 </html>
