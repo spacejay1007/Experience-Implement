@@ -20,7 +20,7 @@ let observer = new IntersectionObserver(function (entries, observers) {
         // item을 count 숫자 만큼 생성하고 list에 추가해주기
         let item = document.createElement("p");
 
-        item.textContent = String(i);
+        item.textContent = String(i); // textContent 는 string을 받을 수 있어서 i를 string 으로 변경
         item.className += "item";
         list.appendChild(item); // div tag className="list" 에 자식 element로 넣기
       }
