@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <div class="drag__box"></div>
+  </body>
+  <script src="./dragInterval.js"></script>
+  <!-- <script>
+    document.querySelector(".drag__box");
+
+    const dataArr = new Array(24).fill(0).map((item, idx) => {
+      let itemTag = document.createElement("div");
+      item.textContent(`<div class="drag__btn ${idx}">${idx}</div>`);
+      itemTag.appendChild(itemTag);
+    });
+    // divElement?.id = dataArr;
+  </script> -->
+  <style>
+    .drag__box {
+      width: 100%;
+      height: 100%;
+      display: flex;
+    }
+    .iterval__box {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 30px;
+      height: 30px;
+      border: 1px solid red;
+      margin: 5px;
+    }
+  </style>
+</html>
