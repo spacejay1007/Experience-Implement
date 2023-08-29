@@ -9,7 +9,7 @@ const customArr = (arrNum: number, init = null) => {
   return baseArray;
 };
 
-console.log(customArr(10), customArr(10).flat(1) as any[]);
+console.log(customArr(10), customArr(10).flat(1));
 // console.log(newArr);
 
 // [
