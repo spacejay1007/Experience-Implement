@@ -8,5 +8,17 @@ var customArr = function (arrNum, init) {
     }
     return baseArray;
 };
-console.log(customArr(10));
+console.log(customArr(10), customArr(10).flat(1));
 // console.log(newArr);
+// [
+//   [null, null, null, null, null, null, null, null, null, null],
+//   [null, null, null, null, null, null, null, null, null, null],
+//   [null, null, null, null, null, null, null, null, null, null],
+//   [null, null, null, null, null, null, null, null, null, null],
+//   [null, null, null, null, null, null, null, null, null, null],
+//   [null, null, null, null, null, null, null, null, null, null],
+//   [null, null, null, null, null, null, null, null, null, null],
+//   [null, null, null, null, null, null, null, null, null, null],
+//   [null, null, null, null, null, null, null, null, null, null],
+//   [null, null, null, null, null, null, null, null, null, null],
+// ];
