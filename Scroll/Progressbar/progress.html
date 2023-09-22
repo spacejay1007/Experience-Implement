@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <div id="my_calculator" class="wrpper" style="background-color: brown; width: 100%; height: 40px;"><div draggable class="controller" id="my_calculator__child" style=`${moveX}%`></div>
+
+
+
+    <script>
+      const calculator = document.querySelector("#my_calculator");
+      const child = document.querySelector("#my_calculator__child")
+      let moveX = 0;
+      calculator.addEventListener("click", (e) => {
+        e.preventDefault();
+        e.stopPropagation();
+        const wrapperRect = calculator.getBoundingClientRect();
+        console.log(e.clientX, wrapperRect.x, wrapperRect.width)
+
+        // 내가 클릭하는 X 값 - 태그의 X의 값 / 태그의 width 값
+        let z = Math.floor(
+          ((e.clientX - wrapperRect.x) / wrapperRect.width) * 100 // 백분율 구하는 공식
+        );
+        let x = Math.floor((  e.clientX /wrapperRect.width)*100)
+        console.log(x,z)
+        if (x >= 100) x = 100;
+        if (x <= 0) x = 0;
+
+
+        moveX = x;
+        return moveX;
+      });
+
+
+        child.addEventListener("mousedown", (e) => {
+        console.log("mouseDown",moveX, e);
+      });
+      // child.addEventListener("mousedown", (e) => {
+      //   console.log(moveX, e);
+      // });
+      child.addEventListener("mouseup", (e)=>{
+        console.log("mouseUP", moveX , e)
+      })
+
+    </script>
+  </body>
+
+  <style>
+    .wrpper{
+      position: relative;
+    }
+    .controller{
+      position: absolute;
+      width: 22px;
+      height: 22px;
+      background-color: #ffffff;
+      border: 3px solid #227ab6;
+      border-radius: 100%;
+      top: 50%;
+      transform: translate(-11px, -50%);
+      cursor: grab !important;
+      z-index: 1;
+
+      border: 3px solid #b9c9d3;
+        cursor: pointer !important;
+    }
+  </style>
+</html>
