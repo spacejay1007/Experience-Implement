@@ -28,6 +28,14 @@ const timeFunc = (t, n) => {
   // add10 = addMaker = (10) => (10) => 10 + 10 이다
   ```
 
+#### Iterable / Iterator Protocol
+
+- 이터러블 (Iterable)
+  - 이터레이터를 반환하는 [Symbol.iterator]() 를 가진 값
+  - 해당 객체들은 Symbol.iterator 를 실행하면 이터레이터를 리턴한다.
+- 이터레이터 (Iterator)
+  - {value, done} 의 객체를 반환하는 next() 값을 가진 값
+
 #### map, filter, reduce 함수 및 중첩 사용
 
 위에서 다룬 고차함수를 사용하려면 map, filter, reduce 를 중첩하여 사용하고 함수형 사고 학습을 계속 적으로 해야한다.

@@ -3,6 +3,7 @@ exports.__esModule = true;
 exports.browserCheck = void 0;
 var browserCheck = function () {
     var agent = navigator.userAgent.toLowerCase();
+    console.log(agent);
     var BrowserIs = function (name) { return agent.indexOf(name) !== -1; };
     if (BrowserIs("chrome")) {
         if (BrowserIs("edg"))

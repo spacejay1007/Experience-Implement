@@ -1,6 +1,6 @@
 export const browserCheck = (): string | void => {
   const agent = navigator.userAgent.toLowerCase();
-  const BrowserIs = (name: string) => agent.indexOf(name) !== -1;
+  const BrowserIs = (name: string) => agent.indexOf(name) !== -1; // 들어오는 이름이 있는지 없는지 판단
 
   if (BrowserIs("chrome")) {
     if (BrowserIs("edg")) return "Edge";
