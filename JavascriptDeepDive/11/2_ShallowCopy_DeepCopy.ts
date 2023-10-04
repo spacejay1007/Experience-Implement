@@ -13,3 +13,24 @@ console.log(shallow.x === copyObj.x); // true
 const deepCopy = _.cloneDeep(copyObj);
 console.log(deepCopy === copyObj); // false
 console.log(deepCopy.x === copyObj.x); // false
+
+let person: any = {
+  name: "Lee",
+};
+let personCopy = person; // 얕은 복사
+console.log(person === personCopy); // true
+personCopy.name = "Kim";
+person.address = "Seoul";
+console.log(personCopy); // { name: 'Kim', address: 'Seoul' }
+console.log(person); // { name: 'Kim', address: 'Seoul' }
+
+// 비교 연산자
+let p1 = {
+  name: "Lee",
+};
+let p2 = {
+  name: "Lee",
+};
+
+console.log(p1 === p2); // false
+console.log(p1.name === p2.name); // true
