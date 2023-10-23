@@ -45,6 +45,16 @@ var recursiveCall = function (count) {
     if (count < 0)
         return;
     console.log(count);
-    recursiveCall(count - 1);
+    return recursiveCall(count - 1);
 };
-recursiveCall(10);
+// recursiveCall(10);
+// 중첩함수
+function outer() {
+    var x = 1;
+    function inner() {
+        var y = 2;
+        console.log("inner", x + y);
+    }
+    inner();
+}
+console.log(outer());

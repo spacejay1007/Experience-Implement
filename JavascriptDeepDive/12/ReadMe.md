@@ -24,3 +24,7 @@
 - 함수가 자기 자신을 호출 하는 것을 재귀 호출이라고 한다.
 - countDown 함수를 -> recursiveCall 로 바꿀 수 있다.
 - 재귀를 공부한 내용은 Function - RecursiveFunc - recursive 를 한 Tree구조방식을 짜본적이 있다.
+
+#### 중첩 함수
+
+- outer > 함수 , inner() > 중첩함수 , 중첩함수는 외부 함수의 변수를 참조할 수 있다.

@@ -51,7 +51,7 @@ function countDown(count) {
     console.log(i);
   }
 }
-countDown(10);
+// countDown(10);
 
 const recursiveCall = (count) => {
   if (count < 0) return;
@@ -59,4 +59,17 @@ const recursiveCall = (count) => {
   return recursiveCall(count - 1);
 };
 
-recursiveCall(10);
+// recursiveCall(10);
+
+// 중첩함수
+function outer() {
+  let x = 1;
+
+  function inner() {
+    let y = 2;
+    console.log("inner", x + y);
+  }
+  inner();
+}
+
+console.log(outer());
