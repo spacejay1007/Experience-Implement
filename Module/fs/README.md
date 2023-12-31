@@ -139,3 +139,8 @@ constants: [Object: null prototype] {
 promises: [Getter]
 }
 ```
+
+[https://www.daleseo.com/js-node-fs/#%EB%94%94%EB%A0%89%ED%86%A0%EB%A6%AC-%EC%82%AD%EC%A0%9C%ED%95%98%EA%B8%B0]
+
+- writeFile method 를 사용하면 기존에 파일에 있던 데이터를 덮어쓴다는 것
+  - 기존에 파일에 있던 데이터 뒤에 새로운 데이터를 추가하고 싶다면 대신에 appendFile() 또는 appednFileSync() 메서드를 사용한다.
