@@ -284,7 +284,7 @@ const PaginationSecond: React.FC<Props> = ({
   );
 };
 
-export const PaginationThird: React.FC<Props> = ({
+const PaginationThird: React.FC<Props> = ({
   format,
   totalPage,
   onChange,
