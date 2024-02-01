@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+  </head>
+  <body>
+    <div id="app"></div>
+    <form id="form">
+      <input name="lotto__input" />
+      <button>하이</button>
+    </form>
+    <script>
+      const form = document.querySelector("#form");
+      const input = document.querySelector("#lotto__input");
+
+      form.addEventListener("submit", (e) => {
+        //e.target 은 form 에 있는 것이고 input 의 name 을 갖은 name의 value 를 뽑아낸다.
+        const string = e.target.lotto__input.value;
+
+        if (!string) return alert("숫자를 입력해주세요");
+
+        const writeNumber = string
+          .split(",")
+          .map((number) => parseInt(number.trim()));
+        if (writeNumber.length !== 6) {
+          return alert("숫자를 6개 입력하세요");
+        }
+        // 중복 제거
+        if (new Set(writeNumber).size !== 6)
+          return alert(
+            `중복 숫자 입력으로 ${new Set(writeNumber).size}개 입력`
+          );
+
+        if (writeNumber.find((number) => number > 45 || number < 1)) {
+          return alert(`1 ~ 45 숫자 사이의 값만 입력 가능`);
+        }
+      });
+    </script>
+    <!-- <script src="./lotto.js"></script> -->
+  </body>
+</html>

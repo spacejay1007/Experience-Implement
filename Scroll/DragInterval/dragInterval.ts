@@ -28,6 +28,3 @@ const dataArr = new Array(24).fill(0).map((item, idx) => {
     eventFlag = false;
   });
 });
-
-console.log(dataArr);
-// divElement?.id = dataArr;
