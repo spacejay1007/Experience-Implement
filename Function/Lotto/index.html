@@ -4,16 +4,19 @@
     <meta charset="UTF-8" />
   </head>
   <body>
-    <div id="app"></div>
     <form id="form">
       <input name="lotto__input" />
-      <button>하이</button>
+      <button>뽑자</button>
     </form>
+    <div id="result">당첨숫자</div>
+    <div id="bonus">보너스 숫자</div>
+
     <script>
       const form = document.querySelector("#form");
-      const input = document.querySelector("#lotto__input");
+      const result = document.querySelector("#result");
 
       form.addEventListener("submit", (e) => {
+        e.preventDefault();
         //e.target 은 form 에 있는 것이고 input 의 name 을 갖은 name의 value 를 뽑아낸다.
         const string = e.target.lotto__input.value;
 
@@ -34,8 +37,32 @@
         if (writeNumber.find((number) => number > 45 || number < 1)) {
           return alert(`1 ~ 45 숫자 사이의 값만 입력 가능`);
         }
+
+        const lottoNumber = Array(45)
+          .fill()
+          .map((_, idx) => idx + 1);
+        const numberArr = [];
+        while (lottoNumber.length) {
+          // splice는 arr
+          const randomNumber = lottoNumber.splice(
+            Math.floor(Math.random() * lottoNumber.length),
+            1
+          )[0];
+          numberArr.push(randomNumber);
+        }
+        const lottoNumberBall = numberArr.slice(0, 6).sort((a, b) => a - b);
+        const bonusLottoBall = numberArr[6];
+
+        // for (const i of lottoNumberBall.length) {
+        for (let i = 0; i < lottoNumberBall.length; i++) {
+          setTimeout(() => {
+            const ball = document.createElement("div");
+            ball.className = "ball";
+            ball.textContent = lottoNumberBall[i];
+            result.appendChild(ball);
+          }, (i + 1) * 1000); // i + 1 > i 가 커질때마다 시간 계산
+        }
       });
     </script>
-    <!-- <script src="./lotto.js"></script> -->
   </body>
 </html>
