@@ -1,0 +1,3 @@
+- 현재 package.json 의 scripts 의 Jest 를 시작하는 방법을 npm test 로 작성해두었다.
+  - terminal에서 npm test 라고 작성하면 모든 .test.js 의 파일들을 모두 테스트 한다.
+  - boolean 파일만 실행하고 싶을때는 npm test 파일명으로 작성해준다. > 예시 npm test boolean
