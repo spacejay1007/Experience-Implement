@@ -1,7 +1,7 @@
 print(1+1) # 2
 print(3-2) # 1
 print(5*2) # 10
-print(6/3) # 2.0 몫!
+print(6/3) # 2.0 몫! 
 print(6 % 4) # 2 나머지!
 print(6//4 ) # 1 > 나머지 다 버리고 몫
 print(2**3) # 8 -> 2^3  > 2의 3승
@@ -39,11 +39,12 @@ from random import *
 print(random()) # 0.0 ~ 1.0 미만의 임의의 값 생성
 print(random() * 10) # 0.0 ~ 10.0 미만의 임의의 값 생성
 print(int(random()*10))  # 0 ~ 10 까지의 임의의 정수값 생성
+print(int(random() * 10) + 1) # 1 ~ 10까지의 임의의 정수값 생성 > 덧샘을 해주는 이유는 0이 나오기 떄문에 0 을 지워주기 위해서 
 
-print(randrange(1,45)) # 1 ~ 45 미만의 숫자의 임의의 값 생성
+print(randrange(1,45)) # 1 ~ 45 미만의 숫자의 임의의 값 생성 > randrange는 범위의 시작 값은 포함 종료값은 포함하지 않는다. 
 
 
-print(randint(1, 45)) # 1 ~ 45 이하의 숫자의 임의의 값 생성
+print(randint(1, 45)) # 1 ~ 45 이하의 숫자의 임의의 값 생성 > randint는 시작값과 종료값을 모두 포함한다. 
 print(randint(1, 45)) # 1 ~ 45 이하의 숫자의 임의의 값 생성
 
 
