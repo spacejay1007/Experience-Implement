@@ -8,7 +8,8 @@ subWay = [10, 20, 30]
 subWay = ["kim", "lee", "Jo"]
 
 print(subWay.index("lee") ) # index 는 배열 string 값에서 그 값의 위치를 알려준다 하지만 find라는 함수도 똑같은 역할을 하는데 find는 [] 에서는 불가능
-subWay.append("Ha")
+
+subWay.append("Ha") # append 는 배열에 포함시키는 것이다.
 # print(subWay) #['kim', 'lee', 'Jo', 'Ha']
 
 # Jung 을 kim 과 lee 사이에 넣어 보자
