@@ -21,4 +21,24 @@ subWay.insert(subWay.index("lee"), "Jung") # 위와 동일하지만 method를 �
 subWay.pop()
 print(subWay)
 
+# 정렬도 가능
+num_list = [5,2,4,3,1]
+print(num_list) # [5,2,4,3,1]
+num_list.sort()
+print(num_list) # [1,2,3,4,5]
+# 정렬 뒤집기
+num_list.reverse()
+print(num_list) # [5,4,3,2,1]
 
+# 모두 지우기
+# num_list.clear()
+# print(num_list) # []
+
+# 다양한 자료형 함께 사용 (String , number, boolean)
+mix_list = ["Jo", 20, True]
+
+print(mix_list) # ["Jo", 20, True]
+
+# 리스트 확장
+num_list.extend(mix_list)
+print(num_list)
